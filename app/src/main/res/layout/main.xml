@@ -1,0 +1,40 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="72dp"
+    android:layout_height="72dp"
+    tools:context=".MyWidget"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="@string/app_name"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal|bottom"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="#ff000000" />
+
+    <TextView
+        android:layout_width="23dp"
+        android:layout_height="41dp"
+        android:text="@string/timer"
+        android:id="@+id/textView2"
+        android:layout_gravity="right|top"
+        android:textStyle="bold"
+        android:textColor="#ffff090c" />
+
+    <ImageView
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:id="@+id/imageView"
+        android:contentDescription="@string/app_name"
+        android:background="#ffffffff"
+        android:src="@drawable/ic_face_black_48dp"
+        android:layout_gravity="left|top" />
+
+
+</FrameLayout>
