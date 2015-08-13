@@ -33,7 +33,7 @@
         android:id="@+id/imageView"
         android:contentDescription="@string/app_name"
         android:background="#ffffffff"
-        android:src="@drawable/ic_face_black_48dp"
+        android:src="@drawable/ic_error_black_48dp"
         android:layout_gravity="left|top" />
 
 
