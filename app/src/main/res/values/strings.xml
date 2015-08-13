@@ -2,4 +2,13 @@
     <string name="app_name">Petrovich Control</string>
     <string name="action_settings">Settings</string>
     <string name="timer">0</string>
+    <string name="mail">e-mail:</string>
+    <string name="key">key:</string>
+    <string name="delay">time delay (min):</string>
+    <string name="id_beacon">ID Ibeacon:</string>
+    <string name="add_settings">Add your settings</string>
+    <string name="test">Test</string>
+    <string name="ok">Ok</string>
+    <string name="cansel">Cancel</string>
+    <string name="activ_deactiv">Activate / Deactivate</string>
 </resources>

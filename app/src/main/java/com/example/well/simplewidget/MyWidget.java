@@ -4,10 +4,12 @@ package com.example.well.simplewidget;
  * Created by Well on 10.08.2015.
  */
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.widget.RemoteViews;
 
@@ -46,9 +48,30 @@ public class MyWidget extends AppWidgetProvider {
             }
         }
 
-
-
         appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
+
+        for (int i : appWidgetIds) {
+            clickWidget(context, appWidgetManager, i);
+        }
     }
+
+    static void clickWidget(Context context, AppWidgetManager appWidgetManager,
+                             int widgetID) {
+
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
+                R.layout.main);
+
+        Intent configIntent = new Intent(context, SettingsActivity.class);
+        configIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_CONFIGURE);
+        configIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetID);
+        PendingIntent pIntent = PendingIntent.getActivity(context, widgetID,
+                configIntent, 0);
+        remoteViews.setOnClickPendingIntent(R.id.imageView, pIntent);
+
+        appWidgetManager.updateAppWidget(widgetID, remoteViews);
+    }
+
+
+
 
 }
