@@ -1,7 +1,7 @@
 package com.example.well.simplewidget;
 
 /**
- * Created by Well on 10.08.2015.
+ * Created by Well on 10.08.2015..
  */
 
 import android.app.PendingIntent;
