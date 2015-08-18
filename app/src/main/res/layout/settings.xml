@@ -11,33 +11,34 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/add_settings"
-        android:id="@+id/textView7" />
+        android:id="@+id/textSettings"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/mail"
-        android:id="@+id/textView3" />
+        android:id="@+id/textEmail" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText" />
+        android:id="@+id/editEmail" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/key"
-        android:id="@+id/textView4" />
+        android:id="@+id/textKey" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/editKey"
         android:inputType="text" />
 
     <TextView
@@ -45,12 +46,12 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/id_beacon"
-        android:id="@+id/textView5" />
+        android:id="@+id/textID" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
+        android:id="@+id/editID"
         android:inputType="text" />
 
     <TextView
@@ -58,14 +59,14 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/delay"
-        android:id="@+id/textView6" />
+        android:id="@+id/textTimeDelay" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText4" />
+        android:id="@+id/editTimeDelay" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -79,19 +80,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/test"
-        android:id="@+id/button2" />
+        android:id="@+id/btnTest" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cansel"
+        android:id="@+id/btnCancel" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ok"
-        android:id="@+id/button3" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cansel"
-        android:id="@+id/button" />
+        android:id="@+id/btnOk" />
 
 </LinearLayout>

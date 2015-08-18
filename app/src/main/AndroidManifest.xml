@@ -19,6 +19,7 @@
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/widget" />
         </receiver>
+
         <activity
             android:name="com.example.well.simplewidget.SettingsActivity">
             <intent-filter>

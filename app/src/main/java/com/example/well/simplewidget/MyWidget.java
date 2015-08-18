@@ -23,7 +23,7 @@ public class MyWidget extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
 
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
         BluetoothAdapter bt = BluetoothAdapter.getDefaultAdapter();
 
         if (!bt.isEnabled()){
@@ -55,11 +55,12 @@ public class MyWidget extends AppWidgetProvider {
         }
     }
 
+
     static void clickWidget(Context context, AppWidgetManager appWidgetManager,
                              int widgetID) {
 
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
-                R.layout.main);
+                R.layout.widget);
 
         Intent configIntent = new Intent(context, SettingsActivity.class);
         configIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_CONFIGURE);
@@ -70,8 +71,4 @@ public class MyWidget extends AppWidgetProvider {
 
         appWidgetManager.updateAppWidget(widgetID, remoteViews);
     }
-
-
-
-
 }
