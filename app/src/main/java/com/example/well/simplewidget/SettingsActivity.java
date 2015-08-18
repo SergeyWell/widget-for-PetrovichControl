@@ -13,7 +13,7 @@ import android.widget.EditText;
 import com.example.widget.R;
 
 /**
- * Created by Well on 13.08.2015..
+ * Created by Well on 13.08.2015.
  */
 public class SettingsActivity extends Activity implements OnClickListener {
     int widgetID = AppWidgetManager.INVALID_APPWIDGET_ID;
