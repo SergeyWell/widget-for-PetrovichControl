@@ -1,2 +1,2 @@
 # widget-for-PetrovichControl
-Виджет для проекта PetrovichControl
+Р’РёРґР¶РµС‚ РґР»СЏ РїСЂРѕРµРєС‚Р° PetrovichControl
