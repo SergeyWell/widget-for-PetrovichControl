@@ -10,14 +10,26 @@ import android.appwidget.AppWidgetProvider;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.widget.RemoteViews;
-
 import com.example.widget.R;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MyWidget extends AppWidgetProvider {
     private static boolean colorType = true;
+    SharedPreferences sPref;
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
@@ -53,8 +65,49 @@ public class MyWidget extends AppWidgetProvider {
         for (int i : appWidgetIds) {
             clickWidget(context, appWidgetManager, i);
         }
+
+        List<NameValuePair> reqList = loadPref();
+
+        sendData(reqList);
+
     }
 
+
+
+    private ArrayList<NameValuePair> loadPref() {
+        ArrayList<NameValuePair> res = new ArrayList<>();
+        res.add(new BasicNameValuePair("test", "http post request!!!"));
+        String email = sPref.getString("email", "");
+//        String key = sPref.getString("key", "");
+//        String id = sPref.getString("id", "");
+//        String time = sPref.getString("timeDelay", "");
+        res.add(new BasicNameValuePair("email", email));
+//        res.add(new BasicNameValuePair("key", key));
+//        res.add(new BasicNameValuePair("id", id));
+//        res.add(new BasicNameValuePair("timeDelay", time));
+
+
+        return res;
+    }
+
+
+    private void sendData(final List <NameValuePair> reqList) {
+        new Thread( new Runnable() {
+
+            @Override
+            public void run() {
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpPost httppost = new HttpPost("https://agent.electricimp.com/dymdKy1MiG5g");
+
+                try {
+                    httppost.setEntity(new UrlEncodedFormEntity(reqList, "UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    }
 
     static void clickWidget(Context context, AppWidgetManager appWidgetManager,
                              int widgetID) {
@@ -72,3 +125,4 @@ public class MyWidget extends AppWidgetProvider {
         appWidgetManager.updateAppWidget(widgetID, remoteViews);
     }
 }
+
